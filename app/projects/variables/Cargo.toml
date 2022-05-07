@@ -1,0 +1,32 @@
+[package]
+name = "variables"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "variable"
+path = "src/variable.rs"
+
+[[bin]]
+name = "calc"
+path = "src/calc.rs"
+
+[[bin]]
+name = "bool"
+path = "src/bool.rs"
+
+[[bin]]
+name = "char"
+path = "src/char.rs"
+
+[[bin]]
+name = "tuple"
+path = "src/tuple.rs"
+
+[[bin]]
+name = "func"
+path = "src/func.rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
