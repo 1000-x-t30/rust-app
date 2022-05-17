@@ -5,6 +5,8 @@ services:
     container_name: 'app'
     working_dir: '/app'
     build: ./infra/rust
+    ports: 
+      - 80:8080
     tty: true
     volumes:
       - ./app:/app

@@ -6,7 +6,6 @@ enum Message {
 enum UsState {
     Alabama,
     Alaska,
-    // ... などなど
 }
 
 enum Coin {
@@ -19,7 +18,7 @@ enum Coin {
 
 impl Message {
     fn call(&self) {
-        println!("{}", "world!");
+        println!("world!");
     }
 }
 
@@ -37,8 +36,17 @@ fn main() {
     let _dime = Coin::Dime;
     let quarter_alabama = Coin::Quarter(UsState::Alabama);
     let _quarter_alaska = Coin::Quarter(UsState::Alaska);
+    value_in_cents(quarter_alabama);
 
-    println!("{}", value_in_cents(quarter_alabama));
+    // Option<T>とのマッチ
+    let five = Some(5);
+    let _six = plus_one(five);
+    let _none = plus_one(None);
+
+    // if letで簡潔な制御フロー
+    if let Some(3) = some_u8_value {
+        println!("three");
+    }
 }
 
 fn value_in_cents(coin: Coin) -> u32 {
@@ -50,5 +58,12 @@ fn value_in_cents(coin: Coin) -> u32 {
             println!("State quarter from {:?}!", state);
             25
         },
+    }
+}
+
+fn plus_one(x: Option<i32>) -> Option<i32> {
+    match x {
+        None => None,
+        Some(i) => Some(i + 1)
     }
 }

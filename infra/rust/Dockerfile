@@ -2,7 +2,8 @@ FROM alpine:3.15
 
 RUN apk add --no-cache \
         ca-certificates \
-        gcc
+        gcc \
+        alpine-sdk
 
 ENV RUSTUP_HOME=/usr/local/rustup \
     CARGO_HOME=/usr/local/cargo \
@@ -26,3 +27,5 @@ RUN set -eux; \
     rustup --version; \
     cargo --version; \
     rustc --version;
+
+EXPOSE 8080
